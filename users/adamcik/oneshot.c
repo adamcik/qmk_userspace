@@ -1,4 +1,5 @@
 #include "oneshot.h"
+#include "definitions.h"
 
 void update_oneshot(
     oneshot_state *state,
@@ -53,5 +54,31 @@ void update_oneshot(
                 }
             }
         }
+    }
+}
+
+bool is_oneshot_cancel_key(uint16_t keycode) {
+    switch (keycode) {
+    case LA_SYM:
+    case LA_NAV:
+        return true;
+    default:
+        return false;
+    }
+}
+
+bool is_oneshot_ignored_key(uint16_t keycode) {
+    switch (keycode) {
+    case LA_SYM:
+    case LA_NAV:
+    case KC_LSFT:
+    case OS_SHFT:
+    case OS_CTRL:
+    case OS_ALT:
+    case OS_ALTG:
+    case OS_CMD:
+        return true;
+    default:
+        return false;
     }
 }

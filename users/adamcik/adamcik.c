@@ -1,10 +1,8 @@
 #include QMK_KEYBOARD_H
 
 #include "oneshot.h"
+#include "definitions.h"
 
-#define LA_SYM MO(SYM)
-#define LA_NAV MO(NAV)
-#define LA_PTR LT(PTR, KC_Z)
 
 #ifndef POINTING_DEVICE_ENABLE
 #define DRGSCRL KC_NO
@@ -12,23 +10,6 @@
 #define S_D_MOD KC_NO
 #define SNIPING KC_NO
 #endif // !POINTING_DEVICE_ENABLE
-
-enum layers {
-    DEF = 0,
-    SYM,
-    NAV,
-    NUM,
-    PTR,
-};
-
-enum keycodes {
-    OS_SHFT = SAFE_RANGE,
-    OS_CTRL,
-    OS_ALT,
-    OS_CMD,
-    OS_ALTG,
-    SW_TAB,
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = LAYOUT_adamcik(
@@ -67,31 +48,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-bool is_oneshot_cancel_key(uint16_t keycode) {
-    switch (keycode) {
-    case LA_SYM:
-    case LA_NAV:
-        return true;
-    default:
-        return false;
-    }
-}
-
-bool is_oneshot_ignored_key(uint16_t keycode) {
-    switch (keycode) {
-    case LA_SYM:
-    case LA_NAV:
-    case KC_LSFT:
-    case OS_SHFT:
-    case OS_CTRL:
-    case OS_ALT:
-    case OS_ALTG:
-    case OS_CMD:
-        return true;
-    default:
-        return false;
-    }
-}
 
 /*
 const key_override_t next_track_override =

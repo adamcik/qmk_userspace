@@ -1,12 +1,2 @@
-SRC += adamcik.c
 SRC += oneshot.c
-
 INTROSPECTION_KEYMAP_C = adamcik.c
-
-# KEY_OVERRIDE_ENABLE = yes
-CONSOLE_ENABLE = no
-COMMAND_ENABLE = no
-AUDIO_ENABLE = no
-MOUSEKEY_ENABLE = no
-WEBUSB_ENABLE = no
-ORYX_ENABLE = no
