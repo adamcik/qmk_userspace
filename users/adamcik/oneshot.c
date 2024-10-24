@@ -61,6 +61,7 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
     case LA_SYM:
     case LA_NAV:
+    case LA_PTR:
         return true;
     default:
         return false;
@@ -71,6 +72,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
     case LA_SYM:
     case LA_NAV:
+    case LA_PTR:
     case KC_LSFT:
     case OS_SHFT:
     case OS_CTRL:

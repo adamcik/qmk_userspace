@@ -4,10 +4,11 @@
 
 #define LA_SYM MO(SYM)
 #define LA_NAV MO(NAV)
-#define LA_PTR LT(PTR, KC_Z)
+#define LA_PTR MO(PTR)
 
 enum layers {
-    DEF = 0,
+    COL = 0,
+    QWE,
     SYM,
     NAV,
     NUM,
@@ -20,5 +21,4 @@ enum keycodes {
     OS_ALT,
     OS_CMD,
     OS_ALTG,
-    SW_TAB,
 };
